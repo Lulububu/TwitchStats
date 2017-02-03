@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100%"
+   height="100%"
+   viewBox="-15 -15 430 470"
+   preserveAspectRatio="xMidYMid meet"
+   zoomAndPan="disable"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="rate.svg">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter3056">
+      <feFlood
+         flood-opacity="0.5"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood3058" />
+       <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite3060" />
+      <feGaussianBlur in="composite1" stdDeviation="2" result="blur" id="feGaussianBlur3062"/>
+      <feOffset
+         dx="6"
+         dy="-7"
+         result="offset"
+         id="feOffset3064" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite3066" />
+    </filter>
+     <filter height="116%" width="116%" y="-8%" x="-8%" id="svgBlur">
+        <feGaussianBlur stdDeviation="8" in="SourceGraphic"/>
+    </filter>
+  <metadata
+     id="metadata15">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1858"
+     inkscape:window-height="1057"
+     id="namedview11"
+     showgrid="false"
+     inkscape:zoom="3.3926749"
+     inkscape:cx="216.75614"
+     inkscape:cy="127.85812"
+     inkscape:window-x="1334"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <path ng-style="{'fill' : color}"
+     style="fill-opacity:1"
+     d="m 103.42477,381.94473 c 98.34502,48.6342 98.1408,66.0246 98.1408,66.0246 0,0 0.29386,-18.7168 99.86391,-69.1195 l -101.80426,12.96286 z"
+     id="path3182"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ccccc" />
+  <circle
+     id="e1_circle"
+     cx="200"
+     cy="200"
+     style="stroke-width:2.20000000000000020%;vector-effect:non-scaling-stroke;filter:url(#filter3056)"
+     r="200"
+     stroke="{{color}}"
+     fill="#FDF4D5" />
+  <text
+     fill="black"
+     x="200"
+     y="200"
+     id="e2_texte"
+     style="font-family: Arial; font-size: 150px; text-anchor: middle; letter-spacing: -9px;">{{messageNumber | number:precision}}</text>
+   <foreignObject x="30"
+     y="200"
+     width="100%"
+     height="235"
+     >
+      <!-- XHTML content goes here -->
+      <xhtml:div
+       style="font-size:40px;text-anchor:middle;color:#000000;font-family:Arial;text-align:center;line-height:225px; height:225px; width:100%;">
+      <xhtml:span
+         style="display:inline-block;   line-height:normal; width:80%">{{label}}</xhtml:span></xhtml:div>
+    </foreignObject>
+
+</svg>

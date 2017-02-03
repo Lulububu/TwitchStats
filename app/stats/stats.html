@@ -1,0 +1,144 @@
+<div class="col">
+    <tc-counter tc-counter-value=calcul.messagesPerMinute.value tc-counter-label="Messages per minute" tc-counter-precision=0 tc-counter-color="rgb(0, 135, 182)"></tc-counter>
+    <tc-chart tc-chart-input=calcul.messagesPerMinute tc-chart-color-primary='rgb(0, 180, 182)' tc-chart-color-secondary='rgb(0, 135, 182)'></tc-chart>
+    <div class="wrapper emot-array">
+        <table class="table-custom">
+            <thead>
+                <th class="cell">
+                    Place
+                </th>
+                <th class="cell">
+                    Emot
+                </th>
+                <th class="cell">
+                    Number
+                </th>
+            </thead>
+            <tbody>
+                <tr class="repeated-item" ng-repeat="emot in emoticon.liste | tcToArray | orderBy:'number':true" ng-if="emot.number > 0">
+                    <td>
+                        {{$index + 1}}
+                    </td>
+                    <td>
+                        <img ng-src="{{emot.url}}" title="{{emot.regex}}"/>
+                    </td>
+                    <td>
+                        {{emot.number}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col-center">
+<tc-channel-search tc-channel-search-input-title="Search for another channel"></tc-channel-search>
+    <div class="chat-container">
+        <table class="table-custom">
+            <tbody>
+                <tr class="repeated-item" ng-repeat="message in messages" >
+                    <td>
+                        {{message.user['display-name'] || message.user.username}}
+                    </td>
+                    <td ng-bind-html="message.message | tcEmoticon:emoticon.liste">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="col col-right">
+    <tc-counter tc-counter-value=pollution.value.value tc-counter-label="% Pollution" tc-counter-precision=1 tc-counter-color="rgb(255, 101, 58)"></tc-counter>
+    <tc-chart tc-chart-input=pollution.value tc-chart-color-primary='rgb(255, 175, 73)' tc-chart-color-secondary='rgb(255, 101, 58)'></tc-chart>
+    <div class="wrapper">
+        <table class="table-custom">
+            <thead>
+                <th title="Place">
+                    #
+                </th>
+                <th >
+                    Pseudo
+                </th>
+                <th title="Number of polluted messages">
+                    #
+                </th>
+                <th>
+                </th>
+            </thead>
+            <tbody>
+                <tr class="repeated-item" ng-repeat="people in pollution.value.worstPeople | tcToArray | limitTo:20 | orderBy:'numberMessagePolluted':true" >
+                    <td>
+                        {{$index + 1}}
+                    </td>
+                    <td class="pseudo-container">
+                        {{people.user['display-name'] || people.user['username']}}
+                    </td>
+                    <td>
+                        {{people.numberMessagePolluted}}
+                    </td>
+                    <td>
+                        <img ng-src="style/{{value + '.png'}}"  class="tc-icon-pollution" ng-repeat="value in people.typePollution | orderBy:'toString()'" title="{{(value === 'SPAM' ? people.lastSpamWord : people.lastCapsMessage)}}">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- <div class="array-container">
+    <div class="wrapper emot-array">
+        <div class="table">
+            <div class="row header">
+                <div class="cell">
+                    Place
+                </div>
+                <div class="cell">
+                    Emot
+                </div>
+                <div class="cell">
+                    Number
+                </div>
+            </div>
+            <div class="row repeated-item" ng-repeat="emot in emoticon.liste | tcToArray | orderBy:'number':true" ng-if="emot.number > 0">
+                <div class="cell">
+                    {{$index + 1}}
+                </div>
+                <div class="cell">
+                    <img ng-src="{{emot.url}}" title="{{emot.regex}}"/>
+                </div>
+                <div class="cell">
+                    {{emot.number}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="table">
+            <div class="row header">
+                <div class="cell">
+                    Place
+                </div>
+                <div class="cell">
+                    Pseudo
+                </div>
+                <div class="cell">
+                    Polluted message
+                </div>
+                <div class="cell">
+                </div>
+            </div>
+            <div class="row repeated-item" ng-repeat="people in pollution.value.worstPeople | tcToArray | limitTo:20 | orderBy:'numberMessagePolluted':true" >
+                <div class="cell">
+                    {{$index + 1}}
+                </div>
+                <div class="cell">
+                    {{people.user['display-name'] || people.user['username']}}
+                </div>
+                <div class="cell">
+                    {{people.numberMessagePolluted}}
+                </div>
+                <div class="cell">
+                    <img ng-src="style/{{value + '.png'}}"  class="tc-icon-pollution" ng-repeat="value in people.typePollution | orderBy:'toString()'" title="{{(value === 'SPAM' ? people.lastSpamWord : people.lastCapsMessage)}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

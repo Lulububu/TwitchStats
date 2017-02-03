@@ -1,0 +1,36 @@
+{
+  "name": "twitch-chat",
+  "authors": [
+    "Erwan Matrat <erwan.matrat@cegetel.net>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "twitch",
+    "pollution",
+    "statistics",
+    "graph"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Chart.js": "~1.0.2",
+    "angular-animate": "~1.4.7",
+    "es6-promise": "~3.0.2",
+    "angular": "~1.4.7",
+    "tmi": "https://github.com/Schmoopiie/tmi.js",
+    "angular-ui-router": "~0.2.15",
+    "angular-sanitize": "~1.4.8"
+  }
+}
